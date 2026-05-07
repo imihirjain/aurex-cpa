@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import header from "../assets/header-bg-color.png";
 import arrow from "../assets/arrow.png";
-import menu from "../assets/menu-black.png";
+import menu from "../assets/menu-white.png";
 import close from "../assets/close-black.png";
 
 const Navbar = () => {

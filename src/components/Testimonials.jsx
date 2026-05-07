@@ -6,13 +6,15 @@ const Testimonials = () => {
   return (
     <div
       id="testimonials"
-      className="flex flex-col gap-10 justify-center items-center p-10 overflow-hidden mt-10"
+      className="scroll-mt-24 flex flex-col gap-8 justify-center items-center px-4 py-10 sm:p-10 mt-10"
     >
-      <h1 className="text-5xl font-semibold">Client Testimonials</h1>
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-center">
+        Client Testimonials
+      </h1>
 
-      <div className="flex gap-4 flex-wrap p-9">
+      <div className="flex gap-4 sm:gap-6 overflow-x-auto w-full px-2 sm:px-4 py-6 scroll-smooth">
         {testiData.map((item, index) => (
-          <div key={index} className="min-w-75 shrink-0">
+          <div key={index} className="shrink-0 w-[85%] sm:w-80 md:w-96">
             <TestiCard img={item.image} testi={item.review} />
           </div>
         ))}
