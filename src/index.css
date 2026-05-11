@@ -1,5 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
 
 html {
   scroll-behavior: smooth;
 }
+
+@theme {
+  --font-man: "Manrope", sans-serif;
+  --background-color-darkBlue: #202940;
+  --color-heading: #4b4038;
+  --color-beige: #caaa98;
+  --color-darkBlue: #202940;
+  --color-lightBrown: #9a8678;
+}
+
+/* 
+body {
+  background-color: #202940;
+} */

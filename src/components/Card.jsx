@@ -1,12 +1,12 @@
 import React from "react";
-import icon5 from "../assets/dollar.svg";
 
-const Card = ({ icon, title, desc }) => {
+const Card = ({ title, desc }) => {
   return (
-    <div className="flex flex-col gap-1 items-center p-5 rounded">
-      <img src={icon} alt={title} className="w-38 h-38" />
-      <h2 className="text-2xl font-bold">{title}</h2>
-      <p className="leading-relaxed tracking-wider">{desc}</p>
+    <div className="min-h-76 gap-4 flex flex-col px-10 py-5 bg-darkBlue rounded-tl-4xl rounded-br-4xl">
+      <h2 className="text-2xl font-bold text-lightBrown text-center">
+        {title}
+      </h2>
+      <p className=" text-justify text-beige">{desc}</p>
     </div>
   );
 };
