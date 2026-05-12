@@ -27,7 +27,7 @@ const About = () => {
           environments and unlock new opportunities for growth.
         </p>
         <p className="text-beige text-sm sm:text-base md:text-lg tracking-normal sm:tracking-widest">
-          At Aurex , we aim to build lasting relationships by providing
+          At Aurex CPA, we aim to build lasting relationships by providing
           practical solutions that support both business success and long-term
           financial confidence.
         </p>

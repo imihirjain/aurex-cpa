@@ -22,7 +22,10 @@ const Form = () => {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(() => {
-        toast.success("Thankyou for contacting");
+        toast.success("Thankyou for contacting", {
+          position: "top-right",
+          autoClose: 3000,
+        });
         form.current.reset();
       })
       .catch((err) => {

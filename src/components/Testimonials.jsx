@@ -42,7 +42,7 @@ const Testimonials = () => {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 2000);
+    const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
   }, [currentIndex, visibleCards]);
 
