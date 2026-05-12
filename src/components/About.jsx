@@ -14,7 +14,7 @@ const About = () => {
         </h1>
 
         <p className="text-beige text-sm sm:text-base md:text-lg tracking-normal sm:tracking-widest">
-          Aurex CPAs & Advisors LLC was founded with a commitment to delivering
+          Aurex CPA & Advisors LLC was founded with a commitment to delivering
           reliable, forward-thinking accounting and advisory services for modern
           businesses. We work closely with entrepreneurs, startups, and
           established companies to simplify financial management, strengthen
@@ -27,7 +27,7 @@ const About = () => {
           environments and unlock new opportunities for growth.
         </p>
         <p className="text-beige text-sm sm:text-base md:text-lg tracking-normal sm:tracking-widest">
-          At Aurex CPAs, we aim to build lasting relationships by providing
+          At Aurex , we aim to build lasting relationships by providing
           practical solutions that support both business success and long-term
           financial confidence.
         </p>

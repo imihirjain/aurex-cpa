@@ -47,7 +47,10 @@ const Services = () => {
   }, [currentIndex, visibleCards]);
 
   return (
-    <div className="scroll-mt-24 font-man flex flex-col items-center py-10 gap-8">
+    <div
+      id="service"
+      className="scroll-mt-24 font-man flex flex-col items-center py-10 gap-8"
+    >
       <h1 className="uppercase font-bold text-xl sm:text-5xl text-darkBlue">
         Our Services
       </h1>

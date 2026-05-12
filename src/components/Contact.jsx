@@ -1,5 +1,6 @@
 import React from "react";
 import { FaLinkedinIn, FaFacebook, FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import Form from "./Form";
 
 const Contact = () => {
@@ -25,18 +26,33 @@ const Contact = () => {
         </p>
 
         <div className="flex gap-5 text-beige">
-          <FaLinkedinIn
-            size={24}
-            className="cursor-pointer hover:text-heading hover:scale-95 transition-all duration-200"
-          />
-          <FaFacebook
-            size={24}
-            className="cursor-pointer hover:text-heading hover:scale-95 transition-all duration-200"
-          />
-          <FaInstagram
-            size={24}
-            className="cursor-pointer hover:text-heading hover:scale-95 transition-all duration-200"
-          />
+          {/* <a href="">
+            <FaLinkedinIn
+              size={24}
+              className="cursor-pointer hover:text-heading hover:scale-95 transition-all duration-200"
+            />
+          </a> */}
+          <a href="https://www.facebook.com/aurexcpas/" target="_blank">
+            <FaFacebook
+              size={24}
+              className="cursor-pointer hover:text-heading hover:scale-95 transition-all duration-200"
+            />
+          </a>
+          <a href="https://www.youtube.com/@Aurexcpas" target="_blank">
+            <FaYoutube
+              size={24}
+              className="cursor-pointer hover:text-heading hover:scale-95 transition-all duration-200"
+            />
+          </a>
+          <a
+            href="https://www.instagram.com/aurexcpas?igsh=MWcyMzhvODU4a3YzaA=="
+            target="_blank"
+          >
+            <FaInstagram
+              size={24}
+              className="cursor-pointer hover:text-heading hover:scale-95 transition-all duration-200"
+            />
+          </a>
         </div>
       </div>
 

@@ -1,20 +1,37 @@
-import React from "react";
+import React, { useRef } from "react";
 import { toast } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaMessage } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import emailjs from "@emailjs/browser";
 
 const Form = () => {
+  const form = useRef();
+  console.log(import.meta.env.VITE_EMAILJS_SERVICE_ID);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted successfully");
-    toast.success("Thankyou for contacting");
-    e.target.reset();
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        toast.success("Thankyou for contacting");
+        form.current.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Failed to send");
+      });
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form ref={form} onSubmit={handleSubmit}>
       <div className="p-5 sm:p-8 lg:p-10 flex flex-col gap-6 lg:gap-8 font-man text-beige">
         {/* row inputs */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-10 w-full">
@@ -26,6 +43,7 @@ const Form = () => {
               <FaUser /> Your Name
             </label>
             <input
+              name="name"
               type="text"
               id="username"
               className="w-full px-3 sm:px-4 py-2 border-b border-beige
@@ -44,6 +62,7 @@ const Form = () => {
 
             <input
               type="email"
+              name="email"
               required
               id="email"
               className="w-full px-3 sm:px-4 py-2 border-b border-beige 
@@ -62,6 +81,7 @@ const Form = () => {
             </label>
             <input
               type="number"
+              name="number"
               id="phone"
               className="w-full px-3 sm:px-4 py-2 border-b border-beige
                          focus:outline-none focus:ring-0"
@@ -79,6 +99,7 @@ const Form = () => {
 
             <input
               type="text"
+              name="location"
               id="location"
               className="w-full px-3 sm:px-4 py-2 border-b border-beige 
                          focus:outline-none focus:ring-0"
@@ -98,6 +119,7 @@ const Form = () => {
 
           <textarea
             id="message"
+            name="message"
             rows={4}
             className="w-full px-3 sm:px-4 py-2 border-b border-beige
                        focus:outline-none focus:ring-0 resize-none"
