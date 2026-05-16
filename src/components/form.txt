@@ -1,49 +1,47 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaMessage } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
-import axios from "axios";
+import emailjs from "@emailjs/browser";
 
 const Form = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    location: "",
-    message: "",
-  });
-
+  const form = useRef();
   const [loading, setLoading] = useState(false);
+  console.log(import.meta.env.VITE_EMAILJS_SERVICE_ID);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      setLoading(true);
-      const res = await axios.post("/api/sendMail", form);
-
-      toast.success(res.data.message);
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        location: "",
-        message: "",
+    setLoading(true);
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      )
+      .then(() => {
+        toast("Thankyou for contacting", {
+          position: "top-right",
+          autoClose: 3000,
+        });
+        form.current.reset();
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Failed to send");
+      })
+      .finally(() => {
+        setLoading(false);
       });
-    } catch (error) {
-      toast.error("Failed to send message. Please try again later.");
-    } finally {
-      setLoading(false);
-    }
   };
-
   return (
     <>
       <ToastContainer position="bottom-right" />
 
-      <form onSubmit={handleSubmit}>
+      <form ref={form} onSubmit={handleSubmit}>
         <div className="p-5 sm:p-8 lg:p-10 flex flex-col gap-6 lg:gap-8 font-man text-beige">
           {/* row inputs */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 lg:gap-10 w-full">
@@ -60,8 +58,6 @@ const Form = () => {
                 id="username"
                 className="w-full px-3 sm:px-4 py-2 border-b border-beige
                          focus:outline-none focus:ring-0"
-                value={form.name}
-                onChange={(e) => setForm({ ...form, name: e.target.value })}
               />
             </div>
 
@@ -78,8 +74,6 @@ const Form = () => {
                 type="email"
                 name="email"
                 required
-                value={form.email}
-                onChange={(e) => setForm({ ...form, email: e.target.value })}
                 id="email"
                 className="w-full px-3 sm:px-4 py-2 border-b border-beige 
                          focus:outline-none focus:ring-0"
@@ -101,8 +95,6 @@ const Form = () => {
                 id="phone"
                 className="w-full px-3 sm:px-4 py-2 border-b border-beige
                          focus:outline-none focus:ring-0"
-                value={form.phone}
-                onChange={(e) => setForm({ ...form, phone: e.target.value })}
               />
             </div>
 
@@ -121,8 +113,6 @@ const Form = () => {
                 id="location"
                 className="w-full px-3 sm:px-4 py-2 border-b border-beige 
                          focus:outline-none focus:ring-0"
-                value={form.location}
-                onChange={(e) => setForm({ ...form, location: e.target.value })}
               />
             </div>
           </div>
@@ -143,8 +133,6 @@ const Form = () => {
               rows={4}
               className="w-full px-3 sm:px-4 py-2 border-b border-beige
                        focus:outline-none focus:ring-0 resize-none"
-              value={form.message}
-              onChange={(e) => setForm({ ...form, message: e.target.value })}
             ></textarea>
           </div>
 
