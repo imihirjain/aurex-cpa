@@ -6,13 +6,13 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { name, email, subject, message } = req.body;
+    const { name, email, phone, location, message } = req.body;
 
     // SMTP configuration
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: process.env.SMTP_PORT,
-      secure: "true",
+      port: Number(process.env.SMTP_PORT),
+      secure: true,
       auth: {
         user: process.env.EMAIL,
         pass: process.env.PASSWORD,
