@@ -51,9 +51,17 @@ const Services = () => {
       id="service"
       className="scroll-mt-24 font-man flex flex-col items-center py-10 gap-8"
     >
-      <h1 className="uppercase font-bold text-xl sm:text-5xl text-darkBlue">
+      <h2 className="uppercase font-bold text-xl sm:text-5xl text-darkBlue">
         Our Services
-      </h1>
+      </h2>
+
+      <div className="max-w-4xl text-center px-4 text-darkBlue">
+        <p>
+          Aurex CPA Solutions offers professional bookkeeping, tax preparation,
+          payroll processing, accounting, financial reporting and advisory
+          services for startups, entrepreneurs and growing businesses.
+        </p>
+      </div>
 
       <div className="relative w-full max-w-7xl overflow-hidden">
         <div

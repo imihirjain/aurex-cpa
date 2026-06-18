@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <>
       <div className="text-center font-man bg-beige text-darkBlue font-bold sm:flex items-center justify-between p-10">
-        <p className="flex items-center lg:gap-2">
+        <p className="flex items-center justify-center gap-2 lg:gap-2">
           <FaRegCopyright /> 2026 Aurex CPA. All rights reserved.
         </p>
 
