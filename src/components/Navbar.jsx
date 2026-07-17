@@ -45,32 +45,32 @@ const Navbar = () => {
         >
           <li>
             {" "}
-            <a href="#home" className="font-ovo hover:text-darkBlue">
+            <a href="#home" className="font-ovo hover:underline">
               Home
             </a>{" "}
           </li>
           <li>
             {" "}
-            <a href="#service" className="font-ovo hover:text-darkBlue">
+            <a href="#service" className="font-ovo hover:underline  ">
               Services
             </a>{" "}
           </li>
           <li>
             {" "}
-            <a href="#about" className="font-ovo hover:text-darkBlue  ">
+            <a href="#about" className="font-ovo hover:underline  ">
               About
             </a>{" "}
           </li>
 
           <li>
             {" "}
-            <a href="#testimonials" className="font-ovo hover:text-darkBlue">
+            <a href="#testimonials" className="font-ovo hover:underline">
               Testimonials
             </a>{" "}
           </li>
           <li>
             {" "}
-            <a href="#contact" className="font-ovo hover:text-darkBlue">
+            <a href="#contact" className="font-ovo hover:underline">
               Contact us
             </a>{" "}
           </li>
@@ -87,7 +87,7 @@ const Navbar = () => {
             Contact
           </a>
           <button className="block md:hidden ml-3" onClick={openMenu}>
-            <img src={menu} alt="" className="w-6" />
+            <img src={menu} alt="" className="w-6 cursor-pointer" />
           </button>
         </div>
 
@@ -104,7 +104,7 @@ const Navbar = () => {
             <a
               href="#home"
               onClick={closeMenu}
-              className="font-ovo hover:text-[#4b4038]"
+              className="font-ovo hover:text-heading hover:underline"
             >
               Home
             </a>{" "}
@@ -114,7 +114,7 @@ const Navbar = () => {
             <a
               href="#service"
               onClick={closeMenu}
-              className="font-ovo hover:text-[#4b4038]"
+              className="font-ovo hover:text-heading hover:underline"
             >
               Services
             </a>{" "}
@@ -125,7 +125,7 @@ const Navbar = () => {
             <a
               href="#about"
               onClick={closeMenu}
-              className="font-ovo hover:text-[#4b4038]  "
+              className="font-ovo hover:text-heading hover:underline  "
             >
               About
             </a>{" "}
@@ -136,7 +136,7 @@ const Navbar = () => {
             <a
               href="#testimonials"
               onClick={closeMenu}
-              className="font-ovo hover:text-[#4b4038]"
+              className="font-ovo hover:text-heading hover:underline"
             >
               Testimonials
             </a>{" "}
@@ -146,7 +146,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={closeMenu}
-              className="font-ovo hover:text-[#4b4038]"
+              className="font-ovo hover:text-heading hover:underline"
             >
               Contact us
             </a>{" "}
